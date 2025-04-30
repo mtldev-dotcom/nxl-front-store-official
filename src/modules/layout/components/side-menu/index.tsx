@@ -14,13 +14,13 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
   const toggleState = useToggleState()
   const { translate } = useTranslation()
   
-  // Menu items with translations
+  // Menu items - simplified to match main navigation
   const SideMenuItems = {
-    [translate("navigation", "home", "Home")]: "/",
-    [translate("navigation", "shop", "Shop")]: "/store",
-    [translate("navigation", "categories", "Categories")]: "/categories",
-    [translate("navigation", "collections", "Collections")]: "/collections",
-    [translate("navigation", "account", "Account")]: "/account",
+    "Home": "/",
+    "Store": "/store",
+    "Blog": "/blog",
+    "Contact Us": "/contact",
+    [translate("general", "account", "Account")]: "/account",
     [translate("general", "cart", "Cart")]: "/cart",
   }
 

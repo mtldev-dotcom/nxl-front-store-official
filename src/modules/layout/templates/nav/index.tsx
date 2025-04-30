@@ -21,37 +21,37 @@ export default async function Nav({ params }: NavProps) {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base">
-        <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
+      <header className="relative h-20 mx-auto border-b duration-200 bg-nxl-black border-nxl-gold/30">
+        <nav className="content-container flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full lg:hidden">
               <SideMenu regions={regions} />
             </div>
           {/* Regular navigation for desktop view */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8">
             <LocalizedClientLink 
               href="/"
-              className="text-ui-fg-subtle hover:text-ui-fg-base transition-colors"
+              className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
             >
-              {dictionary.navigation.home}
-            </LocalizedClientLink>
-            <LocalizedClientLink 
-              href="/categories"
-              className="text-ui-fg-subtle hover:text-ui-fg-base transition-colors"
-            >
-              {dictionary.navigation.categories}
-            </LocalizedClientLink>
-            <LocalizedClientLink 
-              href="/collections"
-              className="text-ui-fg-subtle hover:text-ui-fg-base transition-colors"
-            >
-              {dictionary.navigation.collections}
+              Home
             </LocalizedClientLink>
             <LocalizedClientLink 
               href="/store"
-              className="text-ui-fg-subtle hover:text-ui-fg-base transition-colors"
+              className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
             >
-              {dictionary.navigation.shop}
+              Store
+            </LocalizedClientLink>
+            <LocalizedClientLink 
+              href="/blog"
+              className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
+            >
+              Blog
+            </LocalizedClientLink>
+            <LocalizedClientLink 
+              href="/contact"
+              className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
+            >
+              Contact Us
             </LocalizedClientLink>
           </div>
           
@@ -60,10 +60,10 @@ export default async function Nav({ params }: NavProps) {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className="font-display text-2xl tracking-wider hover:text-nxl-gold text-nxl-gold transition-colors duration-300 uppercase"
               data-testid="nav-store-link"
             >
-              {dictionary.general.title}
+              Next <span className="text-nxl-gold">X</span> Level
             </LocalizedClientLink>
           </div>
 
@@ -71,7 +71,7 @@ export default async function Nav({ params }: NavProps) {
             <div className="hidden small:flex items-center gap-x-6 h-full">
               <LanguageSelect />
               <LocalizedClientLink
-                className="hover:text-ui-fg-base"
+                className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
                 href="/account"
                 data-testid="nav-account-link"
               >
@@ -81,7 +81,7 @@ export default async function Nav({ params }: NavProps) {
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="hover:text-ui-fg-base flex gap-2"
+                  className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300 flex gap-2"
                   href="/cart"
                   data-testid="nav-cart-link"
                 >

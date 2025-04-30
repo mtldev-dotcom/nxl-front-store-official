@@ -43,7 +43,7 @@ const LanguageSelect = () => {
   return (
     <div className="relative">
       <button
-        className="flex items-center gap-x-2 text-sm"
+        className="flex items-center gap-x-2 text-sm text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{getLanguageName(locale as string)}</span>
@@ -66,13 +66,13 @@ const LanguageSelect = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-white shadow-md border rounded-md z-50">
+        <div className="absolute top-full right-0 mt-2 bg-nxl-black shadow-md border border-nxl-gold/30 rounded-md z-50">
           <div className="py-2">
             {i18nConfig.locales.map((localeOption) => (
               <button
                 key={localeOption}
-                className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 ${
-                  localeOption === locale ? "font-medium" : ""
+                className={`w-full px-4 py-2 text-left text-sm text-nxl-ivory hover:bg-nxl-navy hover:text-nxl-gold transition-colors duration-200 ${
+                  localeOption === locale ? "font-medium text-nxl-gold" : ""
                 }`}
                 onClick={() => handleLanguageChange(localeOption)}
               >

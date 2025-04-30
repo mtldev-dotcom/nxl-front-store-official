@@ -1,19 +1,13 @@
 <p align="center">
-  <a href="https://www.medusajs.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    <img alt="Medusa logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    </picture>
-  </a>
+  <img src="/public/nxl-gold-logo.png" alt="Next X Level Logo" width="200" />
 </p>
 
 <h1 align="center">
-  The Medusa Kiki Shop
+  Next X Level Golf Apparel Store
 </h1>
 
 <p align="center">
-Combine Medusa's modules for your commerce backend with the newest Next.js 15 features for a performant, multilingual storefront.</p>
+A premium e-commerce experience for golf enthusiasts, built with modern web technologies and luxury design principles.</p>
 
 <p align="center">
   <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
@@ -22,30 +16,38 @@ Combine Medusa's modules for your commerce backend with the newest Next.js 15 fe
   <a href="https://discord.gg/xpCwq3Kfn8">
     <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
   </a>
-  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
+  <a href="https://twitter.com/intent/follow?screen_name=nextxlevel">
+    <img src="https://img.shields.io/twitter/follow/nextxlevel.svg?label=Follow%20@nextxlevel" alt="Follow @nextxlevel" />
   </a>
 </p>
 
 # Overview
 
-The Medusa Kiki Shop is built with:
+The Next X Level Golf Apparel Store is built with:
 
 - [Next.js 15](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Medusa](https://medusajs.com/)
+- [Medusa](https://medusajs.com/) (Commerce Backend)
 
 ## Features
 
-- **Full ecommerce support**:
-  - Product Detail Page
-  - Product Overview Page
-  - Product Collections
-  - Cart
-  - Checkout with Stripe
-  - User Accounts
-  - Order Details
+- **Premium E-commerce Experience**:
+  - Elegant Product Detail Pages
+  - Luxury Product Collections
+  - Seamless Cart Experience
+  - Streamlined Checkout Process
+  - User Account Management
+  - Order Tracking
+  - Responsive Luxury Design
+
+- **Home Page Sections**:
+  - Hero Banner with Brand Showcase
+  - Featured Products Gallery
+  - Brand Story Section
+  - Product Categories (Polos, Hoodies, Joggers, Caps)
+  - Lifestyle Benefits Highlights
+  - Newsletter Subscription
 
 - **Internationalization**:
   - Multi-language support (English and French)
@@ -54,13 +56,14 @@ The Medusa Kiki Shop is built with:
   - Language and region selection in both navigation and footer
   - Server-side and client-side translation management
 
-- **Next.js 15 features**:
-  - App Router
-  - Next fetching/caching
+- **Advanced Technical Features**:
+  - App Router Architecture
+  - Next.js Fetching/Caching
   - Server Components
   - Server Actions
-  - Streaming
+  - Streaming Content
   - Static Pre-Rendering
+  - Custom Luxury UI Components
 
 # Quickstart
 
@@ -69,7 +72,7 @@ The Medusa Kiki Shop is built with:
 Navigate into your projects directory and get your environment variables ready:
 
 ```shell
-cd nextjs-starter-medusa/
+cd next-x-level-front-store/
 mv .env.template .env.local
 ```
 
@@ -93,9 +96,32 @@ yarn dev
 
 Your site is now running at http://localhost:8000!
 
+# Brand Design System
+
+The Next X Level store features a custom luxury design system:
+
+- **Color Palette**:
+  - Black (`#0E0E0E`) - Primary background
+  - Navy (`#1A2436`) - Secondary background and accents
+  - Green (`#1C2B22`) - Tertiary accents
+  - Gold (`#C6A94C`) - Primary brand accent
+  - Ivory (`#F0ECE6`) - Primary text color
+
+- **Typography**:
+  - Display: Cinzel - Used for brand name and primary headings
+  - Serif: Playfair Display - Used for subheadings
+  - Body: Libre Baskerville - Used for body text
+  - Button: Cormorant Garamond - Used for buttons and calls-to-action
+
+- **UI Components**:
+  - Custom button styles with subtle shimmer effects
+  - Elegant card designs with gold accents
+  - Luxury form elements with gold focus states
+  - Premium image hover effects
+
 # Internationalization
 
-The Medusa Kiki Shop comes with built-in support for multiple languages and regions:
+The Next X Level store comes with built-in support for multiple languages and regions:
 
 - **Supported Languages**: 
   - English (en)
@@ -120,7 +146,7 @@ The Medusa Kiki Shop comes with built-in support for multiple languages and regi
 
 # Payment integrations
 
-By default this starter supports the following payment integrations
+By default this store supports the following payment integrations:
 
 - [Stripe](https://stripe.com/)
 

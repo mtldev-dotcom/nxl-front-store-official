@@ -15,36 +15,45 @@ export default async function ProductPreview({
   isFeatured?: boolean
   region: HttpTypes.StoreRegion
 }) {
-  // const pricedProduct = await listProducts({
-  //   regionId: region.id,
-  //   queryParams: { id: [product.id!] },
-  // }).then(({ response }) => response.products[0])
-
-  // if (!pricedProduct) {
-  //   return null
-  // }
-
   const { cheapestPrice } = getProductPrice({
     product,
   })
 
   return (
     <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper">
-        <Thumbnail
-          thumbnail={product.thumbnail}
-          images={product.images}
-          size="full"
-          isFeatured={isFeatured}
-        />
-        <div className="flex txt-compact-medium mt-4 justify-between">
-          <Text className="text-ui-fg-subtle" data-testid="product-title">
-            {product.title}
-          </Text>
-          <div className="flex items-center gap-x-2">
-            {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
-          </div>
+      <div data-testid="product-wrapper" className="transition-all duration-300">
+        <div className="relative overflow-hidden">
+          <Thumbnail
+            thumbnail={product.thumbnail}
+            images={product.images}
+            size="full"
+            isFeatured={isFeatured}
+          />
+          {/* Gold corner accent on hover */}
+          <div className="absolute top-0 right-0 w-0 h-0 border-t-[50px] border-r-[50px] border-t-transparent border-r-nxl-gold/0 group-hover:border-r-nxl-gold/30 transition-all duration-500"></div>
         </div>
+        
+        <div className="mt-6 space-y-2">
+          <div className="flex justify-between items-baseline">
+            <Text 
+              className="font-serif text-nxl-ivory group-hover:text-nxl-gold transition-colors duration-300" 
+              data-testid="product-title"
+            >
+              {product.title}
+            </Text>
+            <div className="flex items-center">
+              {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
+            </div>
+          </div>
+          
+          {/* Product type/category displayed as subtle text */}
+          <Text className="font-body text-sm text-nxl-ivory/60">
+            {product.type?.value || "Golf Apparel"}
+          </Text>
+        </div>
+        
+        {/* Underline animation on hover */}
+        <div className="h-px w-0 bg-nxl-gold mt-3 group-hover:w-full transition-all duration-500 ease-in-out"></div>
       </div>
     </LocalizedClientLink>
   )

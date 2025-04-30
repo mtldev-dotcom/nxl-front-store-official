@@ -27,21 +27,32 @@ export default async function ProductRail({
   }
 
   return (
-    <div className="content-container py-12 small:py-24">
-      <div className="flex justify-between mb-8">
-        <Text className="txt-xlarge">{collection.title}</Text>
-        <InteractiveLink href={`/collections/${collection.handle}`}>
-          View all
-        </InteractiveLink>
+    <div className="bg-nxl-black">
+      <div className="content-container py-20 small:py-32">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 pb-6 border-b border-nxl-gold/30">
+          <div>
+            <Text className="font-serif text-sm uppercase tracking-widest text-nxl-gold mb-2">Featured Collection</Text>
+            <Text className="font-serif text-3xl sm:text-4xl text-nxl-ivory">{collection.title}</Text>
+          </div>
+          <InteractiveLink 
+            href={`/collections/${collection.handle}`}
+            className="font-button text-nxl-gold hover:text-nxl-gold/80 uppercase tracking-wider mt-4 sm:mt-0"
+          >
+            View all
+          </InteractiveLink>
+        </div>
+        <ul className="grid grid-cols-1 small:grid-cols-2 medium:grid-cols-3 gap-x-10 gap-y-24 small:gap-y-36">
+          {pricedProducts &&
+            pricedProducts.map((product) => (
+              <li key={product.id} className="group relative">
+                <div className="absolute -inset-3 bg-gradient-to-r from-nxl-green/5 via-nxl-gold/5 to-nxl-navy/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative">
+                  <ProductPreview product={product} region={region} isFeatured />
+                </div>
+              </li>
+            ))}
+        </ul>
       </div>
-      <ul className="grid grid-cols-2 small:grid-cols-3 gap-x-6 gap-y-24 small:gap-y-36">
-        {pricedProducts &&
-          pricedProducts.map((product) => (
-            <li key={product.id}>
-              <ProductPreview product={product} region={region} isFeatured />
-            </li>
-          ))}
-      </ul>
     </div>
   )
 }

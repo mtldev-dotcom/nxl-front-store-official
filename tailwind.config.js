@@ -34,6 +34,13 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        nxl: {
+          black: "#0E0E0E",
+          green: "#1C2B22",
+          gold: "#C6A94C",
+          navy: "#1A2436",
+          ivory: "#F0ECE6"
+        },
       },
       borderRadius: {
         none: "0px",
@@ -69,6 +76,25 @@ module.exports = {
           "Ubuntu",
           "sans-serif",
         ],
+        serif: [
+          "Playfair Display",
+          "Georgia",
+          "serif"
+        ],
+        display: [
+          "Cinzel",
+          "Trajan Pro",
+          "serif"
+        ],
+        body: [
+          "Libre Baskerville",
+          "Georgia",
+          "serif"
+        ],
+        button: [
+          "Cormorant Garamond",
+          "serif"
+        ]
       },
       keyframes: {
         ring: {
