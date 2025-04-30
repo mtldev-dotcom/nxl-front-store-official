@@ -1,0 +1,66 @@
+{
+  "general": {
+    "title": "The Medusa Kiki Shop",
+    "description": "A performant frontend ecommerce starter template with Next.js 15 and Medusa.",
+    "featuredProducts": "Featured Products",
+    "learnMore": "Learn More",
+    "addToCart": "Add to Cart",
+    "viewDetails": "View Details",
+    "checkout": "Checkout",
+    "cart": "Cart",
+    "account": "Account",
+    "search": "Search",
+    "language": "Language",
+    "country": "Country"
+  },
+  "hero": {
+    "title": "Ecommerce Starter Template",
+    "subtitle": "Powered by Medusa and Next.js",
+    "viewOnGithub": "View on GitHub"
+  },
+  "navigation": {
+    "home": "Home",
+    "shop": "Shop",
+    "categories": "Categories",
+    "collections": "Collections",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "footer": {
+    "customerService": "Customer Service",
+    "help": "Help",
+    "about": "About us",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "shipping": "Shipping & Returns",
+    "copyright": "© 2025 Next X Level. All rights reserved."
+  },
+  "product": {
+    "price": "Price",
+    "quantity": "Quantity",
+    "addToCart": "Add to Cart",
+    "description": "Description",
+    "details": "Details",
+    "reviews": "Reviews",
+    "relatedProducts": "Related Products",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock"
+  },
+  "cart": {
+    "empty": "Your cart is empty",
+    "continueShoping": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "Tax",
+    "total": "Total",
+    "checkout": "Proceed to Checkout"
+  },
+  "checkout": {
+    "shippingAddress": "Shipping Address",
+    "billingAddress": "Billing Address",
+    "paymentMethod": "Payment Method",
+    "placeOrder": "Place Order",
+    "orderSummary": "Order Summary"
+  }
+}

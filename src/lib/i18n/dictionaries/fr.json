@@ -1,0 +1,66 @@
+{
+  "general": {
+    "title": "La Shop Kiki de Medusa",
+    "description": "Un modèle de démarrage e-commerce performant avec Next.js 15 et Medusa.",
+    "featuredProducts": "Produits en vedette",
+    "learnMore": "En savoir plus",
+    "addToCart": "Ajouter au panier",
+    "viewDetails": "Voir les détails",
+    "checkout": "Paiement",
+    "cart": "Panier",
+    "account": "Compte",
+    "search": "Rechercher",
+    "language": "Langue",
+    "country": "Pays"
+  },
+  "hero": {
+    "title": "Modèle de démarrage E-commerce",
+    "subtitle": "Propulsé par Medusa et Next.js",
+    "viewOnGithub": "Voir sur GitHub"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "shop": "Boutique",
+    "categories": "Catégories",
+    "collections": "Collections",
+    "about": "À propos",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "footer": {
+    "customerService": "Service client",
+    "help": "Aide",
+    "about": "À propos de nous",
+    "terms": "Termes et conditions",
+    "privacy": "Politique de confidentialité",
+    "shipping": "Expédition et retours",
+    "copyright": "© 2025 Next X Level. Tous droits réservés."
+  },
+  "product": {
+    "price": "Prix",
+    "quantity": "Quantité",
+    "addToCart": "Ajouter au panier",
+    "description": "Description",
+    "details": "Détails",
+    "reviews": "Avis",
+    "relatedProducts": "Produits associés",
+    "outOfStock": "Rupture de stock",
+    "inStock": "En stock"
+  },
+  "cart": {
+    "empty": "Votre panier est vide",
+    "continueShoping": "Continuer vos achats",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "tax": "Taxe",
+    "total": "Total",
+    "checkout": "Passer à la caisse"
+  },
+  "checkout": {
+    "shippingAddress": "Adresse de livraison",
+    "billingAddress": "Adresse de facturation",
+    "paymentMethod": "Méthode de paiement",
+    "placeOrder": "Passer la commande",
+    "orderSummary": "Récapitulatif de la commande"
+  }
+}
