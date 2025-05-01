@@ -4,8 +4,26 @@ import { useState } from "react"
 import { useTranslation } from "@lib/context/translation-context"
 import { Button } from "@medusajs/ui"
 
-const Newsletter = () => {
+interface NewsletterProps {
+  dictionary?: Record<string, any>
+}
+
+const Newsletter = ({ dictionary }: NewsletterProps) => {
   const { translate } = useTranslation()
+  
+  // If dictionary isn't passed as a prop, use defaults
+  const newsletterText = dictionary?.newsletter || {
+    title: "Join The Next Level",
+    subtitle: "Stay updated on new collections, exclusive offers, and golf lifestyle content",
+    placeholder: "Your email address",
+    subscribe: "Subscribe",
+    processing: "Processing...",
+    disclaimer: "By subscribing, you agree to receive marketing emails from Next X Level. You can unsubscribe at any time.",
+    success: {
+      title: "Thank You for Subscribing",
+      message: "We've added you to our newsletter. Watch your inbox for exclusive updates and offers."
+    }
+  }
   const [email, setEmail] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -27,10 +45,10 @@ const Newsletter = () => {
       <div className="content-container max-w-4xl">
         <div className="text-center mb-10">
           <h2 className="font-display text-3xl md:text-4xl text-nxl-gold uppercase tracking-wider mb-4">
-            Join The Next Level
+            {newsletterText.title}
           </h2>
           <p className="font-body text-nxl-ivory/80 max-w-xl mx-auto mb-6">
-            Stay updated on new collections, exclusive offers, and golf lifestyle content
+            {newsletterText.subtitle}
           </p>
         </div>
 
@@ -39,9 +57,9 @@ const Newsletter = () => {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-nxl-gold mx-auto mb-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
-            <h3 className="font-serif text-xl text-nxl-ivory mb-2">Thank You for Subscribing</h3>
+            <h3 className="font-serif text-xl text-nxl-ivory mb-2">{newsletterText.success.title}</h3>
             <p className="font-body text-nxl-ivory/80">
-              We've added you to our newsletter. Watch your inbox for exclusive updates and offers.
+              {newsletterText.success.message}
             </p>
           </div>
         ) : (
@@ -55,7 +73,7 @@ const Newsletter = () => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your email address"
+                    placeholder={newsletterText.placeholder}
                     className="nxl-input w-full"
                     required
                   />
@@ -73,12 +91,11 @@ const Newsletter = () => {
                       </svg>
                       Processing...
                     </>
-                  ) : "Subscribe"}
+                  ) : newsletterText.subscribe}
                 </Button>
               </div>
               <p className="text-nxl-ivory/50 text-xs font-body text-center">
-                By subscribing, you agree to receive marketing emails from Next X Level. 
-                You can unsubscribe at any time.
+                {newsletterText.disclaimer}
               </p>
             </div>
           </form>

@@ -33,25 +33,25 @@ export default async function Nav({ params }: NavProps) {
               href="/"
               className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
             >
-              Home
+              {dictionary.navigation.home}
             </LocalizedClientLink>
             <LocalizedClientLink 
               href="/store"
               className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
             >
-              Store
+              {dictionary.navigation.shop}
             </LocalizedClientLink>
             <LocalizedClientLink 
               href="/blog"
               className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
             >
-              Blog
+              {dictionary.navigation.about}
             </LocalizedClientLink>
             <LocalizedClientLink 
               href="/contact"
               className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
             >
-              Contact Us
+              {dictionary.navigation.contact}
             </LocalizedClientLink>
           </div>
           

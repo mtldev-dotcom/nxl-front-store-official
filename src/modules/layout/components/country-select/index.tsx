@@ -24,9 +24,10 @@ type CountryOption = {
 type CountrySelectProps = {
   toggleState: StateType
   regions: HttpTypes.StoreRegion[]
+  dictionary?: Record<string, any>
 }
 
-const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
+const CountrySelect = ({ toggleState, regions, dictionary }: CountrySelectProps) => {
   const [current, setCurrent] = useState<
     | { country: string | undefined; region: string; label: string | undefined }
     | undefined
@@ -75,7 +76,7 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
       >
         <ListboxButton className="py-1 w-full">
           <div className="txt-compact-small flex items-start gap-x-2">
-            <span>Shipping to:</span>
+            <span className="text-nxl-ivory">{dictionary?.footer?.shippingTo || "Shipping to"}:</span>
             {current && (
               <span className="txt-compact-small flex items-center gap-x-2">
                 {/* @ts-ignore */}
@@ -101,7 +102,7 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
             leaveTo="opacity-0"
           >
             <ListboxOptions
-              className="absolute -bottom-[calc(100%-36px)] left-0 xsmall:left-auto xsmall:right-0 max-h-[442px] overflow-y-scroll z-[900] bg-white drop-shadow-md text-small-regular uppercase text-black no-scrollbar rounded-rounded w-full"
+              className="absolute -bottom-[calc(100%-36px)] left-0 xsmall:left-auto xsmall:right-0 max-h-[442px] overflow-y-scroll z-[900] bg-nxl-black border border-nxl-gold/30 drop-shadow-md text-small-regular uppercase text-nxl-ivory no-scrollbar rounded-md w-full shadow-lg shadow-nxl-gold/10 backdrop-blur-sm"
               static
             >
               {options?.map((o, index) => {
@@ -109,7 +110,7 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
                   <ListboxOption
                     key={index}
                     value={o}
-                    className="py-2 hover:bg-gray-200 px-3 cursor-pointer flex items-center gap-x-2"
+                    className="py-2 hover:bg-nxl-gold/10 px-3 cursor-pointer flex items-center gap-x-2 transition-colors duration-200"
                   >
                     {/* @ts-ignore */}
                     <ReactCountryFlag

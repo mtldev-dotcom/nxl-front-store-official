@@ -1,7 +1,7 @@
 {
   "general": {
-    "title": "La Shop Kiki de Medusa",
-    "description": "Un modèle de démarrage e-commerce performant avec Next.js 15 et Medusa.",
+    "title": "Next X Level",
+    "description": "Élevez votre jeu de golf avec des vêtements modernes et performants conçus au Canada. Nos vêtements allient style, confort et fonctionnalité—parfaits pour les golfeurs de tous niveaux.",
     "featuredProducts": "Produits en vedette",
     "learnMore": "En savoir plus",
     "addToCart": "Ajouter au panier",
@@ -14,9 +14,73 @@
     "country": "Pays"
   },
   "hero": {
-    "title": "Modèle de démarrage E-commerce",
-    "subtitle": "Propulsé par Medusa et Next.js",
-    "viewOnGithub": "Voir sur GitHub"
+    "title": "Next X Level",
+    "subtitle": "Vêtements de Golf Canadiens Haut de Gamme",
+    "description": "Élevez votre jeu de golf avec des vêtements modernes et performants conçus au Canada. Nos vêtements allient style, confort et fonctionnalité—parfaits pour les golfeurs de tous niveaux.",
+    "shopCollection": "Voir la Collection",
+    "ourStory": "Notre Histoire",
+    "tagline": "Portez votre jeu—et votre style—au Niveau Supérieur."
+  },
+  "brandStory": {
+    "title": "Notre Histoire",
+    "subtitle": "De la Passion au Premium",
+    "paragraph1": "Fondée au Canada par des passionnés de golf, Next X Level est née du désir de créer des vêtements de golf qui allient performance, style et confort sans compromis.",
+    "paragraph2": "Nous avons constaté que les vêtements de golf obligeaient souvent les joueurs à choisir entre fonctionnalité et mode. Notre mission est devenue claire : concevoir des vêtements de golf haut de gamme qui performent sous pression tout en vous faisant paraître et vous sentir au mieux sur et en dehors du parcours.",
+    "learnMore": "En Savoir Plus",
+    "tagline": "Élevez votre jeu"
+  },
+  "categories": {
+    "title": "Achetez par Catégorie",
+    "subtitle": "Explorez notre collection de vêtements de golf haut de gamme conçue pour le style et la performance",
+    "polos": {
+      "name": "Polos",
+      "description": "Style classique avec performance moderne"
+    },
+    "hoodies": {
+      "name": "Sweats à Capuche",
+      "description": "Confort pour les journées fraîches sur le parcours"
+    },
+    "joggers": {
+      "name": "Joggings",
+      "description": "Coupe athlétique pour une liberté de mouvement"
+    },
+    "caps": {
+      "name": "Casquettes",
+      "description": "Complétez votre look avec un style signature"
+    },
+    "shopNow": "Acheter Maintenant"
+  },
+  "benefits": {
+    "title": "L'Avantage Next X Level",
+    "subtitle": "Notre engagement envers la qualité, la performance et le style nous distingue",
+    "quality": {
+      "title": "Qualité Premium", 
+      "description": "Nos vêtements sont fabriqués à partir des meilleurs matériaux pour le confort et la durabilité sur et en dehors du parcours."
+    },
+    "performance": {
+      "title": "Design Performant",
+      "description": "Conçu avec une ventilation stratégique, une technologie d'évacuation de l'humidité et des tissus extensibles pour une performance optimale."
+    },
+    "uvProtection": {
+      "title": "Protection UV",
+      "description": "La protection UPF 50+ intégrée protège votre peau des rayons nocifs pendant les longues journées sur le parcours."
+    },
+    "shipping": {
+      "title": "Livraison Rapide",
+      "description": "Livraison gratuite partout au Canada et options d'expédition internationale rapide disponibles."
+    }
+  },
+  "newsletter": {
+    "title": "Rejoignez le Niveau Supérieur",
+    "subtitle": "Restez informé des nouvelles collections, des offres exclusives et du contenu sur le mode de vie du golf",
+    "placeholder": "Votre adresse e-mail",
+    "subscribe": "S'abonner",
+    "processing": "Traitement en cours...",
+    "disclaimer": "En vous abonnant, vous acceptez de recevoir des e-mails marketing de Next X Level. Vous pouvez vous désabonner à tout moment.",
+    "success": {
+      "title": "Merci de Vous Être Abonné",
+      "message": "Nous vous avons ajouté à notre newsletter. Surveillez votre boîte de réception pour des mises à jour et des offres exclusives."
+    }
   },
   "navigation": {
     "home": "Accueil",
@@ -34,7 +98,22 @@
     "terms": "Termes et conditions",
     "privacy": "Politique de confidentialité",
     "shipping": "Expédition et retours",
-    "copyright": "© 2025 Next X Level. Tous droits réservés."
+    "copyright": "© 2025 Next X Level. Tous droits réservés.",
+    "navigation": "Navigation",
+    "aboutUs": "À propos de nous",
+    "ourStory": "Notre histoire",
+    "ourValues": "Nos valeurs",
+    "contactUs": "Contactez-nous",
+    "follow": "Suivez-nous",
+    "language": "Langue",
+    "country": "Pays",
+    "shippingTo": "Expédition vers",
+    "emailPlaceholder": "Votre e-mail",
+    "messagePlaceholder": "Votre message",
+    "send": "Envoyer",
+    "settings": "Paramètres",
+    "premiumDescription": "Vêtements de golf canadiens haut de gamme conçus pour les golfeurs de tous niveaux—des joueurs occasionnels du week-end aux professionnels chevronnés.",
+    "madein": "Fièrement fabriqué au Canada."
   },
   "product": {
     "price": "Prix",
@@ -61,6 +140,58 @@
     "billingAddress": "Adresse de facturation",
     "paymentMethod": "Méthode de paiement",
     "placeOrder": "Passer la commande",
-    "orderSummary": "Récapitulatif de la commande"
+    "orderSummary": "Récapitulatif de la commande",
+    "backToCart": "Retour au panier",
+    "back": "Retour",
+    "title": "Paiement"
+  },
+  "error": {
+    "pageNotFound": "Page non trouvée",
+    "pageNotFoundDesc": "La page que vous avez essayé d'accéder n'existe pas.",
+    "goToFrontpage": "Aller à la page d'accueil",
+    "somethingWentWrong": "Une erreur s'est produite",
+    "cartTransferFailed": "Une erreur s'est produite lors du transfert de votre panier",
+    "runTransferAgain": "Réessayer le transfert",
+    "transferring": "Transfert en cours..."
+  },
+  "shipping": {
+    "freeShipping": "Livraison Gratuite",
+    "unlockFreeShipping": "Débloquer la livraison gratuite",
+    "freeShippingUnlocked": "Livraison gratuite débloquée !",
+    "onlyAway": "Seulement {amount} de plus",
+    "viewCart": "Voir le panier",
+    "viewProducts": "Voir les produits"
+  },
+  "account": {
+    "dashboard": "Tableau de bord",
+    "orders": "Commandes",
+    "addresses": "Adresses",
+    "profile": "Profil",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "forgotPassword": "Mot de passe oublié ?",
+    "accountDetails": "Détails du compte",
+    "myAccount": "Mon compte",
+    "customerService": "Service client",
+    "gotQuestions": "Vous avez des questions ?",
+    "faqDescription": "Vous pouvez trouver des questions fréquemment posées et des réponses sur notre page de service client.",
+    "name": "Nom",
+    "email": "Email",
+    "password": "Mot de passe",
+    "phone": "Téléphone",
+    "billingAddress": "Adresse de facturation",
+    "shippingAddress": "Adresse de livraison",
+    "saveChanges": "Enregistrer les modifications",
+    "orderHistory": "Historique des commandes",
+    "noOrdersYet": "Vous n'avez pas encore passé de commande",
+    "browseProducts": "Parcourir les produits",
+    "addressBook": "Carnet d'adresses",
+    "noAddressesYet": "Vous n'avez pas encore ajouté d'adresse",
+    "addAddress": "Ajouter une adresse",
+    "editAddress": "Modifier l'adresse",
+    "deleteAddress": "Supprimer l'adresse",
+    "defaultShippingAddress": "Adresse de livraison par défaut",
+    "defaultBillingAddress": "Adresse de facturation par défaut"
   }
 }

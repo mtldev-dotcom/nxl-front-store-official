@@ -10,8 +10,9 @@ import {
 } from "@medusajs/types"
 import { Button, clx } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { StoreFreeShippingPrice } from "types/global"
+import { useParams } from "next/navigation"
 
 const computeTarget = (
   cart: HttpTypes.StoreCart,
@@ -76,11 +77,14 @@ export default function ShippingPriceNudge({
   variant = "inline",
   cart,
   shippingOptions,
+  dictionary,
 }: {
   variant?: "popup" | "inline"
   cart: StoreCart
   shippingOptions: StoreCartShippingOption[]
+  dictionary?: Record<string, any>
 }) {
+  const { locale } = useParams()
   if (!cart || !shippingOptions?.length) {
     return
   }
@@ -124,15 +128,16 @@ export default function ShippingPriceNudge({
   }
 
   if (variant === "popup") {
-    return <FreeShippingPopup cart={cart} price={freeShippingPrice} />
+    return <FreeShippingPopup cart={cart} price={freeShippingPrice} dictionary={dictionary} />
   } else {
-    return <FreeShippingInline cart={cart} price={freeShippingPrice} />
+    return <FreeShippingInline cart={cart} price={freeShippingPrice} dictionary={dictionary} />
   }
 }
 
 function FreeShippingInline({
   cart,
   price,
+  dictionary,
 }: {
   cart: StoreCart
   price: StorePrice & {
@@ -140,6 +145,7 @@ function FreeShippingInline({
     target_remaining: number
     remaining_percentage: number
   }
+  dictionary?: Record<string, any>
 }) {
   return (
     <div className="bg-neutral-100 p-2 rounded-lg border">
@@ -149,10 +155,10 @@ function FreeShippingInline({
             {price.target_reached ? (
               <div className="flex items-center gap-1.5">
                 <CheckCircleSolid className="text-green-500 inline-block" />{" "}
-                Free Shipping unlocked!
+                {dictionary?.shipping?.freeShippingUnlocked || "Free Shipping unlocked!"}
               </div>
             ) : (
-              `Unlock Free Shipping`
+              dictionary?.shipping?.unlockFreeShipping || "Unlock Free Shipping"
             )}
           </div>
 
@@ -161,14 +167,13 @@ function FreeShippingInline({
               "opacity-0 invisible": price.target_reached,
             })}
           >
-            Only{" "}
-            <span className="text-neutral-950">
-              {convertToLocale({
+            {(dictionary?.shipping?.onlyAway || "Only {amount} away").replace(
+              "{amount}",
+              convertToLocale({
                 amount: price.target_remaining,
                 currency_code: cart.currency_code,
-              })}
-            </span>{" "}
-            away
+              })
+            )}
           </div>
         </div>
         <div className="flex justify-between gap-1">
@@ -191,9 +196,11 @@ function FreeShippingInline({
 function FreeShippingPopup({
   cart,
   price,
+  dictionary,
 }: {
   cart: StoreCart
   price: StoreFreeShippingPrice
+  dictionary?: Record<string, any>
 }) {
   const [isClosed, setIsClosed] = useState(false)
 
@@ -225,10 +232,10 @@ function FreeShippingPopup({
                 {price.target_reached ? (
                   <div className="flex items-center gap-1.5">
                     <CheckCircleSolid className="text-green-500 inline-block" />{" "}
-                    Free Shipping unlocked!
+                    {dictionary?.shipping?.freeShippingUnlocked || "Free Shipping unlocked!"}
                   </div>
                 ) : (
-                  `Unlock Free Shipping`
+                  dictionary?.shipping?.unlockFreeShipping || "Unlock Free Shipping"
                 )}
               </div>
 
@@ -237,14 +244,13 @@ function FreeShippingPopup({
                   "opacity-0 invisible": price.target_reached,
                 })}
               >
-                Only{" "}
-                <span className="text-white">
-                  {convertToLocale({
+                {(dictionary?.shipping?.onlyAway || "Only {amount} away").replace(
+                  "{amount}",
+                  convertToLocale({
                     amount: price.target_remaining,
                     currency_code: cart.currency_code,
-                  })}
-                </span>{" "}
-                away
+                  })
+                )}
               </div>
             </div>
             <div className="flex justify-between gap-1">
@@ -267,14 +273,14 @@ function FreeShippingPopup({
             className="rounded-2xl bg-transparent shadow-none outline-none border-[1px] border-white text-[15px] py-2.5 px-4"
             href="/cart"
           >
-            View cart
+            {dictionary?.shipping?.viewCart || "View cart"}
           </LocalizedClientLink>
 
           <LocalizedClientLink
             className="flex-grow rounded-2xl bg-white text-neutral-950 shadow-none outline-none border-[1px] border-white text-[15px] py-2.5 px-4 text-center"
             href="/store"
           >
-            View products
+            {dictionary?.shipping?.viewProducts || "View products"}
           </LocalizedClientLink>
         </div>
       </div>

@@ -9,7 +9,12 @@ import { useToggleState } from "@medusajs/ui"
 import { HttpTypes } from "@medusajs/types"
 import { i18nConfig, Locale } from "@lib/i18n/config"
 
-const FooterSelectors = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
+interface FooterSelectorsProps {
+  regions: HttpTypes.StoreRegion[] | null
+  dictionary?: Record<string, any>
+}
+
+const FooterSelectors = ({ regions, dictionary }: FooterSelectorsProps) => {
   const { countryCode, locale } = useParams()
   const router = useRouter()
   const pathname = usePathname()
@@ -44,20 +49,22 @@ const FooterSelectors = ({ regions }: { regions: HttpTypes.StoreRegion[] | null 
     setIsLangOpen(false)
   }
 
-  // Use locale-specific labels
-  const languageLabel = locale === "fr" ? "Langue" : "Language"
-  const countryLabel = locale === "fr" ? "Pays" : "Country"
+  // Get footer labels for language and country from dictionary
+  const langLabel = dictionary?.footer?.language || (locale === "fr" ? "Langue" : "Language")
+  const countryLabel = dictionary?.footer?.country || (locale === "fr" ? "Pays" : "Country")
 
   return (
-    <div className="flex flex-col gap-y-5 text-ui-fg-subtle txt-small">
+    <div className="flex flex-col gap-y-5 font-body">
       <div className="flex flex-col gap-3">
-        <span className="txt-small-plus txt-ui-fg-base">
-          {languageLabel}
+        <span className="font-serif text-base text-nxl-gold">
+          {langLabel}
         </span>
         <div className="relative">
           <button
-            className="flex items-center gap-x-2"
+            className="flex items-center gap-x-2 text-nxl-ivory hover:text-nxl-gold transition-colors"
             onClick={() => setIsLangOpen(!isLangOpen)}
+            aria-haspopup="true"
+            aria-expanded={isLangOpen}
           >
             <span>{getLanguageName(locale as string)}</span>
             <span className="h-4 w-4">
@@ -69,7 +76,7 @@ const FooterSelectors = ({ regions }: { regions: HttpTypes.StoreRegion[] | null 
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className={`h-4 w-4 transition-transform ${
+                className={`h-4 w-4 transition-transform duration-300 ${
                   isLangOpen ? "rotate-180" : "rotate-0"
                 }`}
               >
@@ -79,13 +86,13 @@ const FooterSelectors = ({ regions }: { regions: HttpTypes.StoreRegion[] | null 
           </button>
 
           {isLangOpen && (
-            <div className="absolute top-full left-0 mt-1 bg-white shadow-md border rounded-md z-50">
+            <div className="absolute top-full left-0 mt-1 bg-nxl-black border border-nxl-gold/30 rounded z-50 w-36 shadow-lg shadow-nxl-gold/10 backdrop-blur-sm">
               <div className="py-1">
                 {i18nConfig.locales.map((localeOption) => (
                   <button
                     key={localeOption}
-                    className={`w-full px-4 py-2 text-left hover:bg-gray-100 ${
-                      localeOption === locale ? "font-medium" : ""
+                    className={`w-full px-4 py-2 text-left text-nxl-ivory hover:bg-nxl-gold/10 transition-colors ${
+                      localeOption === locale ? "text-nxl-gold font-medium" : ""
                     }`}
                     onClick={() => handleLanguageChange(localeOption)}
                   >
@@ -99,26 +106,27 @@ const FooterSelectors = ({ regions }: { regions: HttpTypes.StoreRegion[] | null 
       </div>
 
       <div className="flex flex-col gap-3">
-        <span className="txt-small-plus txt-ui-fg-base">
+        <span className="font-serif text-base text-nxl-gold">
           {countryLabel}
         </span>
         <div 
-          className="flex items-center gap-x-2"
-          onMouseEnter={toggleState.open}
-          onMouseLeave={toggleState.close}
+          className="relative"
         >
           {regions && (
-            <CountrySelect
-              toggleState={toggleState}
-              regions={regions}
-            />
+            <div className="flex items-center gap-x-2 text-nxl-ivory hover:text-nxl-gold transition-colors">
+              <CountrySelect
+                toggleState={toggleState}
+                regions={regions}
+                dictionary={dictionary}
+              />
+              <ArrowRightMini
+                className={clx(
+                  "transition-transform duration-300",
+                  toggleState.state ? "-rotate-90" : ""
+                )}
+              />
+            </div>
           )}
-          <ArrowRightMini
-            className={clx(
-              "transition-transform duration-150",
-              toggleState.state ? "-rotate-90" : ""
-            )}
-          />
         </div>
       </div>
     </div>

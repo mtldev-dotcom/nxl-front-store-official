@@ -101,6 +101,22 @@ module.exports = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        "line-slide-1": {
+          "0%": { transform: "translateX(-100%) rotate(25deg)" },
+          "100%": { transform: "translateX(100%) rotate(25deg)" }
+        },
+        "line-slide-2": {
+          "0%": { transform: "translateX(100%) rotate(-15deg)" },
+          "100%": { transform: "translateX(-100%) rotate(-15deg)" }
+        },
+        "line-slide-3": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" }
+        },
+        "line-slide-vertical": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100%)" }
+        },
         "fade-in-right": {
           "0%": {
             opacity: "0",
@@ -181,6 +197,10 @@ module.exports = {
         enter: "enter 200ms ease-out",
         "slide-in": "slide-in 1.2s cubic-bezier(.41,.73,.51,1.02)",
         leave: "leave 150ms ease-in forwards",
+        "line-slide-1": "line-slide-1 8s linear infinite",
+        "line-slide-2": "line-slide-2 12s linear infinite",
+        "line-slide-3": "line-slide-3 10s linear infinite",
+        "line-slide-vertical": "line-slide-vertical 15s linear infinite",
       },
     },
   },

@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import { listCartOptions, retrieveCart } from "@lib/data/cart"
 import { retrieveCustomer } from "@lib/data/customer"
 import { getBaseURL } from "@lib/util/env"
+import { getDictionary } from "@lib/i18n/get-dictionary"
 import { Locale } from "@lib/i18n/config"
 import { StoreCartShippingOption } from "@medusajs/types"
 import CartMismatchBanner from "@modules/layout/components/cart-mismatch-banner"
@@ -24,6 +25,7 @@ export default async function PageLayout(props: {
 
   const customer = await retrieveCustomer()
   const cart = await retrieveCart()
+  const dictionary = await getDictionary(params.locale)
   let shippingOptions: StoreCartShippingOption[] = []
 
   if (cart) {
@@ -36,7 +38,7 @@ export default async function PageLayout(props: {
     <ClientLayout>
       <Nav params={{ locale: params.locale }} />
       {customer && cart && (
-        <CartMismatchBanner customer={customer} cart={cart} />
+        <CartMismatchBanner customer={customer} cart={cart} dictionary={dictionary} />
       )}
 
       {cart && (
@@ -44,6 +46,7 @@ export default async function PageLayout(props: {
           variant="popup"
           cart={cart}
           shippingOptions={shippingOptions}
+          dictionary={dictionary}
         />
       )}
       {props.children}

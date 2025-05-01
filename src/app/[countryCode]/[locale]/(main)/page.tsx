@@ -51,7 +51,7 @@ export default async function Home(props: {
   return (
     <>
       {/* Hero Section */}
-      <Hero />
+      <Hero dictionary={dictionary} />
       
       {/* Featured Products Section */}
       <div className="py-16 bg-nxl-black">
@@ -66,16 +66,16 @@ export default async function Home(props: {
       </div>
       
       {/* Brand Story Section */}
-      <BrandStory />
+      <BrandStory dictionary={dictionary} />
       
       {/* Categories Showcase */}
-      <CategoriesShowcase />
+      <CategoriesShowcase dictionary={dictionary} />
       
       {/* Lifestyle Benefits */}
-      <LifestyleBenefits />
+      <LifestyleBenefits dictionary={dictionary} />
       
       {/* Newsletter Signup */}
-      <Newsletter />
+      <Newsletter dictionary={dictionary} />
     </>
   )
 }

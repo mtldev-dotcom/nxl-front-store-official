@@ -27,16 +27,16 @@ export default async function CheckoutLayout({
             data-testid="back-to-cart-link"
           >
             <ChevronDown className="rotate-90" size={16} />
-            <span className="mt-px hidden small:block txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base ">
-              {params.locale === 'fr' ? 'Retour au panier' : 'Back to shopping cart'}
+            <span className="mt-px hidden small:block txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base transition-colors duration-200">
+              {dictionary.checkout.backToCart}
             </span>
-            <span className="mt-px block small:hidden txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base">
-              {params.locale === 'fr' ? 'Retour' : 'Back'}
+            <span className="mt-px block small:hidden txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base transition-colors duration-200">
+              {dictionary.checkout.back}
             </span>
           </LocalizedClientLink>
           <LocalizedClientLink
             href="/"
-            className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+            className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase transition-colors duration-200"
             data-testid="store-link"
           >
             {dictionary.general.title}
