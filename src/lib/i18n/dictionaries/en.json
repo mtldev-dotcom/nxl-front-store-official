@@ -89,7 +89,12 @@
     "collections": "Collections",
     "about": "About",
     "contact": "Contact",
-    "menu": "Menu"
+    "menu": "Menu",
+    "language": "Language",
+    "languages": {
+      "english": "English",
+      "french": "French"
+    }
   },
   "product": {
     "price": "Price",
@@ -109,7 +114,10 @@
     "shipping": "Shipping",
     "tax": "Tax",
     "total": "Total",
-    "checkout": "Proceed to Checkout"
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove",
+    "viewCart": "View cart",
+    "quantity": "Quantity"
   },
   "footer": {
     "customerService": "Customer Service",

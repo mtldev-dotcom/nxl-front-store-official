@@ -1,11 +1,11 @@
+"use client"
+
 import React from "react"
 
 import UnderlineLink from "@modules/common/components/interactive-link"
 
 import AccountNav from "../components/account-nav"
 import { HttpTypes } from "@medusajs/types"
-import { getDictionary } from "@lib/i18n/get-dictionary"
-import { useParams } from "next/navigation"
 
 interface AccountLayoutProps {
   customer: HttpTypes.StoreCustomer | null
@@ -18,8 +18,6 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({
   children,
   dictionary,
 }) => {
-  // Get current locale from params for fallbacks
-  const { locale } = useParams()
   return (
     <div className="flex-1 small:py-12" data-testid="account-page">
       <div className="flex-1 content-container h-full max-w-5xl mx-auto bg-white flex flex-col">

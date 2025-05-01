@@ -19,42 +19,35 @@ export default async function Nav({ params }: NavProps) {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
   const dictionary = await getDictionary(params.locale)
 
+  // Menu item configuration for easy maintenance
+  const navItems = [
+    { path: "/", key: "home" },
+    { path: "/store", key: "shop" },
+    { path: "/blog", key: "about" },
+    { path: "/contact", key: "contact" }
+  ]
+
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-20 mx-auto border-b duration-200 bg-nxl-black border-nxl-gold/30">
+      <header className="relative h-20 mx-auto border-b duration-200 bg-nxl-black border-nxl-gold/30 shadow-lg shadow-black/10">
         <nav className="content-container flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full lg:hidden">
               <SideMenu regions={regions} />
             </div>
-          {/* Regular navigation for desktop view */}
-          <div className="hidden lg:flex items-center space-x-8">
-            <LocalizedClientLink 
-              href="/"
-              className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
-            >
-              {dictionary.navigation.home}
-            </LocalizedClientLink>
-            <LocalizedClientLink 
-              href="/store"
-              className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
-            >
-              {dictionary.navigation.shop}
-            </LocalizedClientLink>
-            <LocalizedClientLink 
-              href="/blog"
-              className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
-            >
-              {dictionary.navigation.about}
-            </LocalizedClientLink>
-            <LocalizedClientLink 
-              href="/contact"
-              className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
-            >
-              {dictionary.navigation.contact}
-            </LocalizedClientLink>
-          </div>
-          
+            {/* Regular navigation for desktop view */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {navItems.map(item => (
+                <LocalizedClientLink 
+                  key={item.key}
+                  href={item.path}
+                  className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300 font-medium relative group"
+                >
+                  <span>{dictionary.navigation[item.key]}</span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-nxl-gold transform group-hover:w-full transition-all duration-300"></span>
+                </LocalizedClientLink>
+              ))}
+            </div>
           </div>
 
           <div className="flex items-center h-full">
@@ -71,17 +64,18 @@ export default async function Nav({ params }: NavProps) {
             <div className="hidden small:flex items-center gap-x-6 h-full">
               <LanguageSelect />
               <LocalizedClientLink
-                className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300"
+                className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300 font-medium relative group"
                 href="/account"
                 data-testid="nav-account-link"
               >
-                {dictionary.general.account}
+                <span>{dictionary.general.account}</span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-nxl-gold transform group-hover:w-full transition-all duration-300"></span>
               </LocalizedClientLink>
             </div>
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300 flex gap-2"
+                  className="font-body text-nxl-ivory hover:text-nxl-gold transition-colors duration-300 flex gap-2 font-medium"
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
@@ -89,7 +83,7 @@ export default async function Nav({ params }: NavProps) {
                 </LocalizedClientLink>
               }
             >
-              <CartButton />
+              <CartButton dictionary={dictionary} />
             </Suspense>
           </div>
         </nav>

@@ -21,8 +21,26 @@ const FooterSelectors = ({ regions, dictionary }: FooterSelectorsProps) => {
   const toggleState = useToggleState()
   const [isLangOpen, setIsLangOpen] = useState(false)
 
-  // Get language display names in the current locale
+  // Get language display names from dictionary
   const getLanguageName = (localeCode: string): string => {
+    // Access dictionary values safely
+    if (dictionary && 
+        typeof dictionary.navigation === 'object' && 
+        dictionary.navigation && 
+        typeof dictionary.navigation.languages === 'object' && 
+        dictionary.navigation.languages) {
+      
+      // Safely access the specific language properties
+      const languages = dictionary.navigation.languages as any;
+      
+      if (localeCode === "en" && languages.english) {
+        return languages.english;
+      } else if (localeCode === "fr" && languages.french) {
+        return languages.french;
+      }
+    }
+    
+    // Fallback if translation is missing
     switch (localeCode) {
       case "en":
         return locale === "fr" ? "Anglais" : "English"
@@ -86,14 +104,19 @@ const FooterSelectors = ({ regions, dictionary }: FooterSelectorsProps) => {
           </button>
 
           {isLangOpen && (
-            <div className="absolute top-full left-0 mt-1 bg-nxl-black border border-nxl-gold/30 rounded z-50 w-36 shadow-lg shadow-nxl-gold/10 backdrop-blur-sm">
+            <div className="absolute top-full left-0 mt-1 bg-nxl-black/95 border border-nxl-gold/40 rounded-md z-50 w-40 shadow-lg shadow-black/20 backdrop-blur-sm">
               <div className="py-1">
                 {i18nConfig.locales.map((localeOption) => (
                   <button
                     key={localeOption}
-                    className={`w-full px-4 py-2 text-left text-nxl-ivory hover:bg-nxl-gold/10 transition-colors ${
-                      localeOption === locale ? "text-nxl-gold font-medium" : ""
-                    }`}
+                    role="option"
+                    aria-selected={localeOption === locale}
+                    className={`w-full px-4 py-2.5 text-left text-sm hover:bg-nxl-navy/70 hover:text-nxl-gold transition-colors duration-200 font-medium
+                      ${localeOption === locale 
+                        ? "bg-nxl-navy/40 text-nxl-gold" 
+                        : "text-nxl-ivory/95"
+                      }
+                    `}
                     onClick={() => handleLanguageChange(localeOption)}
                   >
                     {getLanguageName(localeOption)}

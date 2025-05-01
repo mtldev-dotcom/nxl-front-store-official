@@ -89,7 +89,12 @@
     "collections": "Collections",
     "about": "À propos",
     "contact": "Contact",
-    "menu": "Menu"
+    "menu": "Menu",
+    "language": "Langue",
+    "languages": {
+      "english": "Anglais",
+      "french": "Français"
+    }
   },
   "footer": {
     "customerService": "Service client",
@@ -133,7 +138,10 @@
     "shipping": "Livraison",
     "tax": "Taxe",
     "total": "Total",
-    "checkout": "Passer à la caisse"
+    "checkout": "Passer à la caisse",
+    "remove": "Supprimer",
+    "viewCart": "Voir le panier",
+    "quantity": "Quantité"
   },
   "checkout": {
     "shippingAddress": "Adresse de livraison",
