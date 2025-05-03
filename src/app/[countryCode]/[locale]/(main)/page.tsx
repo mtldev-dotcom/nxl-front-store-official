@@ -131,15 +131,25 @@ export default async function Home(props: {
   //        console.log(collections.map(c => c.handle))
   //    - To target only the 'features' collection, fetch with:
   //        listCollections({ queryParams: { handle: "features" }, fields: "id, handle, title" })
-  if (!collections || !region) {
-    return null
-  }
+
   console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
   console.log(`❌❌❌❌❌❌❌❌❌❌`)
   console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
   // 6. Render page sections in order
+  if (!region) {
+    console.log("region is null")
+    return null;
+  }
+
+  
+  if (!collections.length) {
+    console.log("collections is empty")
+    return null;
+  }
+
   return (
     <>
+    <h1 className="hidden">Next X Level</h1>
       {/* Hero Section: main banner with call-to-action */}
       <Hero dictionary={dictionary} />
 

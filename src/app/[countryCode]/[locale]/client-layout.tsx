@@ -10,6 +10,7 @@ import { TranslationProvider } from "@lib/context/translation-context"
  */
 export default function ClientLayout({ children }: { children: ReactNode }) {
   return (
+    console.log("ClientLayout"),
     <TranslationProvider>
       {children}
     </TranslationProvider>

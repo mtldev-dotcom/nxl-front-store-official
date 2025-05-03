@@ -24,7 +24,7 @@ export default async function FeaturedProducts({
 }: {
   collections: HttpTypes.StoreCollection[]
   region: HttpTypes.StoreRegion
-}) {
+}) { console.log("FeaturedProducts", collections, region)
   // Map each collection to a list item containing its product rail
   return collections.map((collection) => (
     <li key={collection.id}>
