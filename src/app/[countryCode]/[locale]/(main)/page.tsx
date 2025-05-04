@@ -99,7 +99,7 @@ export default async function Home(props: {
   // 3. Fetch region for pricing/localization context
   const region = await getRegion(countryCode)
   console.log("region", region)
-
+  console.log(`🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍`)
   // 4. Fetch collections for featured products section
   //    - listCollections returns `{ collections: Collection[] }` containing all collections.
   //    - We request only minimal fields (`id`, `handle`, `title`) to reduce payload size.
