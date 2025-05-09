@@ -55,15 +55,12 @@ export const listCollections = async (
     )
     
     if (!response.ok) {
-      console.error(`Collection API error: ${response.status} ${response.statusText}`)
       throw new Error(`API error: ${response.status}`)
     }
     
     const data = await response.json()
-    console.log("Collections API response:", data)
     return data
   } catch (error) {
-    console.error("Error fetching collections:", error)
     // Return empty response structure on error
     return {
       collections: [],

@@ -47,8 +47,7 @@ export const retrieveRegion = async (id: string) => {
 
 // Create a map to store region data keyed by country code
 const regionMap = new Map<string, HttpTypes.StoreRegion>()
-console.log(regionMap) // Log the regionMap for debugging
-console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
+
 // Function to get a region based on the country code
 export const getRegion = async (countryCode: string) => {
   try {
@@ -56,12 +55,8 @@ export const getRegion = async (countryCode: string) => {
     if (regionMap.has(countryCode)) {
       return regionMap.get(countryCode)
     }
-    console.log(regionMap) // Log the regionMap for debugging
-    console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
     // Fetch all regions
     const regions = await listRegions()
-    console.log(regions) // Log the regions for debugging
-    console.log(`⚠️⚠️⚠️region⚠️⚠️⚠️⚠️`) 
     // If regions data is not available, return null
     if (!regions) {
       return null

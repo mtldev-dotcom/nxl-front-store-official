@@ -77,29 +77,14 @@ export default async function Home(props: {
     | { countryCode: string; locale: Locale }
 }) {
 
-  console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
-  console.log(`🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍`)
-  console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
-  
-    const now = new Date().toISOString();
-    console.log(`[${now}]`);  
-
   // 1. Await dynamic route params (country and locale)
   const params = await props.params
   const { countryCode, locale } = params
-  console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
-  console.log(`🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍`)
-  console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
-  console.log("params", params)
-  console.log("countryCode", countryCode)
-  console.log("locale", locale)
   // 2. Load localized text dictionary
   const dictionary = await getDictionary(locale)
-  //console.log("dictionary", dictionary)
   // 3. Fetch region for pricing/localization context
   const region = await getRegion(countryCode)
-  console.log("region", region)
-  console.log(`🔍🔍🔍🔍🔍🔍🔍🔍🔍🔍`)
+ 
   // 4. Fetch collections for featured products section
   //    - listCollections returns `{ collections: Collection[] }` containing all collections.
   //    - We request only minimal fields (`id`, `handle`, `title`) to reduce payload size.
@@ -118,10 +103,6 @@ export default async function Home(props: {
     handle: "features",       // Fetch only the 'features' collection
     fields: "id,handle,title", // Include minimal fields to reduce payload
   })
-  console.log("listCollections", listCollections)
-  // collections: Array<Collection> – should contain your "features" collection
-  console.log("collections", collections)
-  console.log("collection handles", collections.map(c => c.handle))
 
 
 
