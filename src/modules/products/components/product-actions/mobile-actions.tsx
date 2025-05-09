@@ -70,24 +70,24 @@ const MobileActions: React.FC<MobileActionsProps> = ({
           leaveTo="opacity-0"
         >
           <div
-            className="bg-white flex flex-col gap-y-3 justify-center items-center text-large-regular p-4 h-full w-full border-t border-gray-200"
+            className="bg-nxl-black flex flex-col gap-y-3 justify-center items-center text-large-regular p-4 h-full w-full border-t border-nxl-gold/30"
             data-testid="mobile-actions"
           >
-            <div className="flex items-center gap-x-2">
-              <span data-testid="mobile-title">{product.title}</span>
+            <div className="flex items-center gap-x-2 text-nxl-ivory">
+              <span data-testid="mobile-title" className="text-nxl-ivory">{product.title}</span>
               <span>—</span>
               {selectedPrice ? (
-                <div className="flex items-end gap-x-2 text-ui-fg-base">
+                <div className="flex items-end gap-x-2 text-nxl-ivory">
                   {selectedPrice.price_type === "sale" && (
                     <p>
-                      <span className="line-through text-small-regular">
+                      <span className="line-through text-small-regular text-nxl-ivory/70">
                         {selectedPrice.original_price}
                       </span>
                     </p>
                   )}
                   <span
                     className={clx({
-                      "text-ui-fg-interactive":
+                      "text-nxl-gold":
                         selectedPrice.price_type === "sale",
                     })}
                   >
@@ -104,13 +104,13 @@ const MobileActions: React.FC<MobileActionsProps> = ({
               {!isSimple && <Button
                 onClick={open}
                 variant="secondary"
-                className="w-full"
+                className="w-full bg-transparent text-nxl-gold border border-nxl-gold font-button uppercase tracking-wider hover:bg-nxl-gold/10 transition-all duration-300"
                 data-testid="mobile-actions-button"
               >
                 <div className="flex items-center justify-between w-full">
                   <span>
                     {variant
-                      ? Object.values(options).join(" / ")
+                      ? Object.values(options).join(" / ")
                       : "Select Options"}
                   </span>
                   <ChevronDown />
@@ -119,7 +119,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
               <Button
                 onClick={handleAddToCart}
                 disabled={!inStock || !variant}
-                className="w-full"
+                className="w-full bg-nxl-gold text-nxl-black border border-nxl-gold hover:bg-nxl-gold/90 transition-all duration-300 font-button uppercase tracking-wider"
                 isLoading={isAdding}
                 data-testid="mobile-cart-button"
               >
@@ -165,13 +165,13 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                   <div className="w-full flex justify-end pr-6">
                     <button
                       onClick={close}
-                      className="bg-white w-12 h-12 rounded-full text-ui-fg-base flex justify-center items-center"
+                      className="bg-nxl-black w-12 h-12 rounded-full border border-nxl-gold/50 text-nxl-gold flex justify-center items-center"
                       data-testid="close-modal-button"
                     >
                       <X />
                     </button>
                   </div>
-                  <div className="bg-white px-6 py-12">
+                  <div className="bg-nxl-black px-6 py-12 border-t border-nxl-gold/30">
                     {(product.variants?.length ?? 0) > 1 && (
                       <div className="flex flex-col gap-y-6">
                         {(product.options || []).map((option) => {

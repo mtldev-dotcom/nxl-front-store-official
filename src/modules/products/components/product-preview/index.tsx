@@ -33,10 +33,10 @@ export default async function ProductPreview({
           <div className="absolute top-0 right-0 w-0 h-0 border-t-[50px] border-r-[50px] border-t-transparent border-r-nxl-gold/0 group-hover:border-r-nxl-gold/30 transition-all duration-500"></div>
         </div>
         
-        <div className="mt-6 space-y-2">
+        <div className="mt-6 space-y-2 px-1">
           <div className="flex justify-between items-baseline">
             <Text 
-              className="font-serif text-nxl-ivory group-hover:text-nxl-gold transition-colors duration-300" 
+              className="font-serif text-nxl-gold font-medium group-hover:text-nxl-gold/80 transition-colors duration-300" 
               data-testid="product-title"
             >
               {product.title}
@@ -47,7 +47,7 @@ export default async function ProductPreview({
           </div>
           
           {/* Product type/category displayed as subtle text */}
-          <Text className="font-body text-sm text-nxl-ivory/60">
+          <Text className="font-body text-sm text-nxl-ivory/90">
             {product.type?.value || "Golf Apparel"}
           </Text>
         </div>

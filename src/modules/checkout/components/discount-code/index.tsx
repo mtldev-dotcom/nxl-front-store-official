@@ -52,14 +52,14 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
   const [message, formAction] = useActionState(submitPromotionForm, null)
 
   return (
-    <div className="w-full bg-white flex flex-col">
+    <div className="w-full bg-transparent flex flex-col">
       <div className="txt-medium">
         <form action={(a) => addPromotionCode(a)} className="w-full mb-5">
           <Label className="flex gap-x-1 my-2 items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="txt-medium text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
+              className="txt-medium text-nxl-gold hover:text-nxl-gold/80"
               data-testid="add-discount-button"
             >
               Add Promotion Code(s)
@@ -74,7 +74,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
             <>
               <div className="flex w-full gap-x-2">
                 <Input
-                  className="size-full"
+                  className="size-full bg-nxl-black border-nxl-gold/30 text-nxl-ivory focus:border-nxl-gold"
                   id="promotion-input"
                   name="code"
                   type="text"
@@ -83,6 +83,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                 />
                 <SubmitButton
                   variant="secondary"
+                  className="bg-transparent text-nxl-gold border border-nxl-gold font-button uppercase tracking-wider hover:bg-nxl-gold/10 transition-all duration-300"
                   data-testid="discount-apply-button"
                 >
                   Apply
@@ -100,7 +101,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
         {promotions.length > 0 && (
           <div className="w-full flex items-center">
             <div className="flex flex-col w-full">
-              <Heading className="txt-medium mb-2">
+              <Heading className="txt-medium mb-2 text-nxl-ivory">
                 Promotion(s) applied:
               </Heading>
 
