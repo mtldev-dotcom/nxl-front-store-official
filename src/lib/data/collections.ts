@@ -2,7 +2,7 @@
 
 import { sdk } from "@lib/config"
 import { HttpTypes } from "@medusajs/types"
-import { getCacheOptions } from "./cookies"
+import { getCacheOptions, getAuthHeaders } from "./cookies"
 
 export const retrieveCollection = async (id: string) => {
   const next = {
@@ -22,24 +22,56 @@ export const retrieveCollection = async (id: string) => {
 
 export const listCollections = async (
   queryParams: Record<string, string> = {}
-): Promise<{ collections: HttpTypes.StoreCollection[]; count: number }> => {
-  const next = {
-    ...(await getCacheOptions("collections")),
+): Promise<{ 
+  collections: HttpTypes.StoreCollection[]; 
+  count: number;
+  offset: number;
+  limit: number;
+}> => {
+  // Include auth headers
+  const authHeaders = await getAuthHeaders()
+  
+  // Set default limit and offset if not provided
+  const query = {
+    limit: "100",
+    offset: "0",
+    ...queryParams, // Spread queryParams after defaults to allow overrides
   }
 
-  queryParams.limit = queryParams.limit || "100"
-  queryParams.offset = queryParams.offset || "0"
-
-  return sdk.client
-    .fetch<{ collections: HttpTypes.StoreCollection[]; count: number }>(
-      "/store/collections",
+  try {
+    // Make direct fetch call to ensure headers are properly set
+    const response = await fetch(
+      `${process.env.MEDUSA_BACKEND_URL || "http://localhost:9000"}/store/collections?` + 
+      new URLSearchParams(query).toString(), 
       {
-        query: queryParams,
-        next,
-        cache: "force-cache",
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-publishable-api-key": process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY || "",
+          ...authHeaders
+        },
+        cache: "no-store" // Avoid caching to get fresh data
       }
     )
-    .then(({ collections }) => ({ collections, count: collections.length }))
+    
+    if (!response.ok) {
+      console.error(`Collection API error: ${response.status} ${response.statusText}`)
+      throw new Error(`API error: ${response.status}`)
+    }
+    
+    const data = await response.json()
+    console.log("Collections API response:", data)
+    return data
+  } catch (error) {
+    console.error("Error fetching collections:", error)
+    // Return empty response structure on error
+    return {
+      collections: [],
+      count: 0,
+      offset: 0,
+      limit: parseInt(query.limit)
+    }
+  }
 }
 
 export const getCollectionByHandle = async (

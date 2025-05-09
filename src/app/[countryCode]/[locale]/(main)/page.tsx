@@ -122,29 +122,19 @@ export default async function Home(props: {
   // collections: Array<Collection> – should contain your "features" collection
   console.log("collections", collections)
   console.log("collection handles", collections.map(c => c.handle))
-  // 5. Guard: if essential data is missing, render nothing
-  //    - If `collections` is empty (length 0), verify:
-  //        • The collection name in backend is "Fearures" → handle should be exactly "features" (lowercase).
-  //        • The handle spelling matches "features" (case-sensitive).
-  //        • The collection is published and assigned to products.
-  //    - You can debug by checking:
-  //        console.log(collections.map(c => c.handle))
-  //    - To target only the 'features' collection, fetch with:
-  //        listCollections({ queryParams: { handle: "features" }, fields: "id, handle, title" })
 
-  console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
-  console.log(`❌❌❌❌❌❌❌❌❌❌`)
-  console.log(`⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️`)
-  // 6. Render page sections in order
+
+
+  // Guard against missing region data - we need this for product pricing
   if (!region) {
-    console.log("region is null")
-    return null;
-  }
-
-  
-  if (!collections.length) {
-    console.log("collections is empty")
-    return null;
+    console.error("Region data is missing. Check your Medusa backend setup.");
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[50vh] text-center p-4">
+        <h1 className="text-2xl font-bold mb-4">Region Configuration Error</h1>
+        <p>Unable to load region data for this country code: {countryCode}</p>
+        <p className="text-sm mt-2">Please check your Medusa backend setup and ensure regions are correctly configured.</p>
+      </div>
+    );
   }
 
   return (
@@ -168,7 +158,11 @@ export default async function Home(props: {
               and published.
             */
             }
-            <FeaturedProducts collections={collections} region={region} />
+            {collections && collections.length > 0 ? (
+              <FeaturedProducts collections={collections} region={region} />
+            ) : (
+              <p className="text-center text-nxl-ivory">No featured products available at this time.</p>
+            )}
           </ul>
         </div>
       </div>

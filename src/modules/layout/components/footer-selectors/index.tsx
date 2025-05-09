@@ -136,7 +136,10 @@ const FooterSelectors = ({ regions, dictionary }: FooterSelectorsProps) => {
           className="relative"
         >
           {regions && (
-            <div className="flex items-center gap-x-2 text-nxl-ivory hover:text-nxl-gold transition-colors">
+            <div 
+              className="flex items-center gap-x-2 text-nxl-ivory hover:text-nxl-gold transition-colors cursor-pointer"
+              onClick={() => toggleState.toggle()}
+            >
               <CountrySelect
                 toggleState={toggleState}
                 regions={regions}
