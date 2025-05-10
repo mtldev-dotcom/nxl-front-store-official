@@ -201,5 +201,125 @@
     "deleteAddress": "Delete Address",
     "defaultShippingAddress": "Default Shipping Address",
     "defaultBillingAddress": "Default Billing Address"
+  },
+  "about": {
+    "hero": {
+      "tagline": "Take your game—and your style—to the Next Level."
+    },
+    "story": {
+      "title": "Our Brand Story",
+      "paragraph1": "Founded with a passion for the game and an eye for style, Next X Level emerged from the realization that golf apparel should be as exceptional as the game itself. Our journey began with a simple premise: create golf clothing that golfers actually want to wear, both on and off the course.",
+      "paragraph2": "Today, we continue to push boundaries and challenge conventions, creating apparel that performs without compromise and styles that stand the test of time. Each piece in our collection is crafted with purpose, designed for the golfer who refuses to settle for anything less than excellence."
+    },
+    "values": {
+      "title": "Our Values",
+      "excellence": {
+        "title": "Excellence",
+        "description": "We pursue excellence in every thread, stitch, and design detail, crafting apparel that exceeds expectations."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We reimagine what golf apparel can be, combining cutting-edge fabrics with timeless designs."
+      },
+      "craftsmanship": {
+        "title": "Craftsmanship",
+        "description": "We honor the traditions of quality craftsmanship while embracing modern techniques to create apparel built to last."
+      },
+      "authenticity": {
+        "title": "Authenticity",
+        "description": "We stay true to our Canadian roots and golfing heritage, creating genuine products for genuine players."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "member1": {
+        "name": "James Wilson",
+        "role": "Founder & CEO",
+        "bio": "Former pro golfer with a passion for design and business. James founded Next X Level to bring his vision of premium golf apparel to life."
+      },
+      "member2": {
+        "name": "Olivia Chen",
+        "role": "Head of Design",
+        "bio": "With experience at top fashion houses, Olivia brings her expertise in high-performance fabrics and elegant aesthetics to our collections."
+      },
+      "member3": {
+        "name": "Michael Tran",
+        "role": "Production Director",
+        "bio": "Overseeing our Canadian manufacturing, Michael ensures every piece meets our exacting standards for quality and craftsmanship."
+      }
+    },
+    "commitment": {
+      "title": "Our Commitment",
+      "paragraph1": "At Next X Level, we're committed to responsible manufacturing and sustainable practices. We believe that quality golf apparel should not come at the expense of our environment.",
+      "paragraph2": "Our fabrics are sourced from responsible suppliers, our packaging is made from recycled materials, and our Canadian production facilities operate with minimal environmental impact.",
+      "paragraph3": "We're constantly innovating to reduce our carbon footprint while increasing the durability and performance of our products—because a truly premium product is one that's built to last.",
+      "quote": "We don't just make golf apparel. We make a statement about who you are, on and off the course."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact",
+      "subtitle": "We'd love to hear from you"
+    },
+    "info": {
+      "title": "Get In Touch",
+      "phone": {
+        "title": "Phone",
+        "number": "+1 (888) 555-GOLF",
+        "hours": "Monday to Friday, 9am - 5pm EST"
+      },
+      "email": {
+        "title": "Email",
+        "address": "info@nextxlevel.com",
+        "response": "We'll respond within 24 hours"
+      },
+      "address": {
+        "title": "Address",
+        "line1": "123 Fairway Drive",
+        "line2": "Toronto, Ontario M5V 2K7",
+        "line3": "Canada"
+      },
+      "follow": "Follow Us"
+    },
+    "form": {
+      "title": "Send Us A Message",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "subjectPlaceholder": "Please select a subject",
+      "subjectOptions": {
+        "order": "Order Inquiry",
+        "product": "Product Information",
+        "wholesale": "Wholesale Inquiry",
+        "other": "Other"
+      },
+      "message": "Message",
+      "submit": "Submit"
+    },
+    "location": {
+      "title": "Visit Our Showroom",
+      "mapPlaceholder": "Interactive Map Would Be Embedded Here",
+      "hours": "Our showroom is open Monday to Friday, 10am to 6pm, and Saturdays from 11am to 4pm.",
+      "appointment": "Please call ahead to schedule a personal shopping appointment for the best experience."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "shipping": {
+        "question": "What are your shipping rates?",
+        "answer": "We offer free shipping on all Canadian orders over $150. For orders under $150, a flat shipping rate of $12 applies. International shipping rates vary by destination."
+      },
+      "tracking": {
+        "question": "How can I track my order?",
+        "answer": "Once your order ships, you'll receive a confirmation email with tracking information. You can also log into your account to view order status at any time."
+      },
+      "returns": {
+        "question": "What is your return policy?",
+        "answer": "We accept returns within 30 days of purchase for unworn items with original tags attached. Returns are processed within 5-7 business days of receipt."
+      },
+      "wholesale": {
+        "question": "Do you offer wholesale opportunities?",
+        "answer": "Yes, we partner with golf pro shops and select retailers. Please contact our wholesale department at wholesale@nextxlevel.com for more information."
+      }
+    }
   }
 }

@@ -201,5 +201,151 @@
     "deleteAddress": "Supprimer l'adresse",
     "defaultShippingAddress": "Adresse de livraison par défaut",
     "defaultBillingAddress": "Adresse de facturation par défaut"
+  },
+  "about": {
+    "hero": {
+      "subtitle": "Élever le jeu avec des vêtements de golf premium pour tous les niveaux",
+      "tagline": "Portez votre jeu—et votre style—au Niveau Supérieur."
+    },
+    "story": {
+      "title": "Notre Histoire",
+      "paragraph1": "Fondée avec une passion pour le jeu et un œil pour le style, Next X Level est née de la prise de conscience que les vêtements de golf devraient être aussi exceptionnels que le jeu lui-même. Notre voyage a commencé par une prémisse simple : créer des vêtements de golf que les golfeurs veulent réellement porter, sur et en dehors du parcours.",
+      "paragraph2": "Aujourd'hui, nous continuons à repousser les limites et à défier les conventions, en créant des vêtements qui performent sans compromis et des styles qui résistent à l'épreuve du temps. Chaque pièce de notre collection est conçue avec un objectif précis, destinée au golfeur qui refuse de se contenter de moins que l'excellence.",
+      "paragraph3": "Notre engagement envers l'excellence s'étend au-delà de nos produits à chaque interaction avec notre marque. Nous croyons que chaque golfeur, quel que soit son niveau, mérite d'avoir l'air et de se sentir au mieux sur le parcours."
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "paragraph1": "Chez Next X Level, notre mission est d'élever l'expérience de chaque golfeur grâce à des vêtements qui allient luxe et performance. Nous concevons pour la confiance, sachant que lorsque vous vous sentez exceptionnel dans ce que vous portez, votre jeu suit naturellement.",
+      "paragraph2": "Nous créons des produits qui honorent l'héritage distingué du golf tout en embrassant l'innovation de pointe. Chaque pièce est méticuleusement conçue pour soutenir votre performance à chaque swing, du premier drive au dernier putt.",
+      "quote": "\"L'excellence dans chaque fil. La performance à chaque swing.\""
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "paragraph1": "Nous envisageons un futur où les vêtements de golf transcendent les frontières conventionnelles—où la technologie de performance fusionne harmonieusement avec l'élégance intemporelle, où l'inclusivité et la durabilité sont des principes fondamentaux, et où chaque golfeur, indépendamment de son niveau de compétence, appartient à la communauté Next X Level.",
+      "paragraph2": "Notre ambition s'étend au-delà des vêtements pour cultiver un écosystème qui responsabilise les golfeurs tout au long de leur parcours personnel, qu'ils poursuivent l'excellence professionnelle ou qu'ils découvrent simplement une appréciation plus profonde pour les plaisirs subtils du jeu.",
+      "paragraph3": "Nous nous consacrons à innover dans la conception de vêtements de golf, établissant de nouveaux standards de qualité et de performance tout en honorant les traditions et l'étiquette qui distinguent ce sport remarquable."
+    },
+    "craftsmanship": {
+      "title": "Notre Savoir-faire",
+      "subtitle": "Chaque création Next X Level incarne la synthèse parfaite de l'art et de l'ingénierie—où des matériaux exceptionnels rencontrent un savoir-faire de précision pour offrir des vêtements d'une qualité et d'une distinction inégalées.",
+      "feature1": {
+        "title": "Matériaux d'Exception",
+        "description": "Nous sélectionnons les tissus les plus distingués du monde, chacun méticuleusement choisi pour ses caractéristiques de performance supérieures, son toucher luxueux et sa longévité exceptionnelle à travers d'innombrables parties."
+      },
+      "feature2": {
+        "title": "Performance Avancée",
+        "description": "Nos vêtements intègrent des technologies de pointe—gestion avancée de l'humidité, protection UV complète et extensibilité multidirectionnelle stratégique—assurant un confort et une performance sans compromis dans toutes les conditions de jeu."
+      },
+      "feature3": {
+        "title": "Design Raffiné",
+        "description": "Chaque élément—des coutures précisément conçues aux poches stratégiquement positionnées et à la quincaillerie signature—est soigneusement intégré avec intention, garantissant que nos vêtements offrent une performance sans compromis tout en maintenant leur esthétique distinguée."
+      }
+    },
+    "values": {
+      "title": "Nos Valeurs Fondamentales",
+      "quality": {
+        "title": "Qualité Sans Compromis",
+        "description": "Nous recherchons les meilleurs matériaux et collaborons avec des artisans qualifiés pour créer des vêtements qui résistent à l'épreuve du temps tant en durabilité qu'en design."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Nous réimaginons ce que peuvent être les vêtements de golf, en combinant des tissus de pointe avec des designs intemporels."
+      },
+      "inclusivity": {
+        "title": "Excellence Inclusive",
+        "description": "Nous concevons pour les golfeurs de tous niveaux, origines et morphologies, convaincus que le style exceptionnel et la performance devraient être accessibles à tous ceux qui aiment ce jeu."
+      }
+    },
+    "team": {
+      "title": "Notre Équipe",
+      "member1": {
+        "name": "James Wilson",
+        "role": "Fondateur et PDG",
+        "bio": "Ancien golfeur professionnel passionné par le design et les affaires. James a fondé Next X Level pour donner vie à sa vision de vêtements de golf haut de gamme."
+      },
+      "member2": {
+        "name": "Olivia Chen",
+        "role": "Directrice du Design",
+        "bio": "Avec une expérience dans les grandes maisons de mode, Olivia apporte son expertise en tissus haute performance et esthétique élégante à nos collections."
+      },
+      "member3": {
+        "name": "Michael Tran",
+        "role": "Directeur de Production",
+        "bio": "Supervisant notre fabrication canadienne, Michael s'assure que chaque pièce répond à nos normes exigeantes de qualité et d'artisanat."
+      }
+    },
+    "commitment": {
+      "title": "Notre Engagement",
+      "paragraph1": "Chez Next X Level, nous nous engageons à une fabrication responsable et à des pratiques durables. Nous croyons que des vêtements de golf de qualité ne devraient pas se faire au détriment de notre environnement.",
+      "paragraph2": "Nos tissus proviennent de fournisseurs responsables, nos emballages sont fabriqués à partir de matériaux recyclés, et nos installations de production canadiennes fonctionnent avec un impact environnemental minimal.",
+      "paragraph3": "Nous innovons constamment pour réduire notre empreinte carbone tout en augmentant la durabilité et la performance de nos produits—parce qu'un produit véritablement premium est un produit conçu pour durer.",
+      "quote": "Nous ne fabriquons pas simplement des vêtements de golf. Nous faisons une déclaration sur qui vous êtes, sur et en dehors du parcours."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact",
+      "subtitle": "Nous aimerions avoir de vos nouvelles"
+    },
+    "info": {
+      "title": "Prenez Contact",
+      "phone": {
+        "title": "Téléphone",
+        "number": "+1 (888) 555-GOLF",
+        "hours": "Du lundi au vendredi, de 9h à 17h HNE"
+      },
+      "email": {
+        "title": "Email",
+        "address": "info@nextxlevel.com",
+        "response": "Nous répondrons dans les 24 heures"
+      },
+      "address": {
+        "title": "Adresse",
+        "line1": "123 Fairway Drive",
+        "line2": "Toronto, Ontario M5V 2K7",
+        "line3": "Canada"
+      },
+      "follow": "Suivez-nous"
+    },
+    "form": {
+      "title": "Envoyez-nous un Message",
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Veuillez sélectionner un sujet",
+      "subjectOptions": {
+        "order": "Demande de Commande",
+        "product": "Information Produit",
+        "wholesale": "Demande de Vente en Gros",
+        "other": "Autre"
+      },
+      "message": "Message",
+      "submit": "Envoyer"
+    },
+    "location": {
+      "title": "Visitez Notre Showroom",
+      "mapPlaceholder": "Une Carte Interactive Serait Intégrée Ici",
+      "hours": "Notre showroom est ouvert du lundi au vendredi, de 10h à 18h, et le samedi de 11h à 16h.",
+      "appointment": "Veuillez appeler à l'avance pour planifier un rendez-vous d'achat personnel pour une meilleure expérience."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "shipping": {
+        "question": "Quels sont vos tarifs d'expédition ?",
+        "answer": "Nous offrons la livraison gratuite sur toutes les commandes canadiennes de plus de 150 $. Pour les commandes de moins de 150 $, des frais d'expédition forfaitaires de 12 $ s'appliquent. Les tarifs d'expédition internationaux varient selon la destination."
+      },
+      "tracking": {
+        "question": "Comment puis-je suivre ma commande ?",
+        "answer": "Une fois votre commande expédiée, vous recevrez un e-mail de confirmation avec les informations de suivi. Vous pouvez également vous connecter à votre compte pour voir l'état de la commande à tout moment."
+      },
+      "returns": {
+        "question": "Quelle est votre politique de retour ?",
+        "answer": "Nous acceptons les retours dans les 30 jours suivant l'achat pour les articles non portés avec les étiquettes d'origine attachées. Les retours sont traités dans les 5 à 7 jours ouvrables suivant la réception."
+      },
+      "wholesale": {
+        "question": "Proposez-vous des opportunités de vente en gros ?",
+        "answer": "Oui, nous travaillons avec des boutiques de golf professionnelles et des détaillants sélectionnés. Veuillez contacter notre département de vente en gros à wholesale@nextxlevel.com pour plus d'informations."
+      }
+    }
   }
 }

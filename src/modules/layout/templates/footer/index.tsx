@@ -61,7 +61,7 @@ export default async function Footer({ params }: FooterProps) {
                 </li>
                 <li>
                   <LocalizedClientLink
-                    href="/blog"
+                    href="/about"
                     className="hover:text-nxl-gold transition-colors"
                   >
                     {dictionary.navigation.about}

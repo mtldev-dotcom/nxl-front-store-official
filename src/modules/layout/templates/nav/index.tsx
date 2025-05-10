@@ -23,7 +23,7 @@ export default async function Nav({ params }: NavProps) {
   const navItems = [
     { path: "/", key: "home" },
     { path: "/store", key: "shop" },
-    { path: "/blog", key: "about" },
+    { path: "/about", key: "about" },
     { path: "/contact", key: "contact" }
   ]
 
